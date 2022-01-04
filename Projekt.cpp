@@ -14,7 +14,7 @@ struct biblioteka
 int main ()
 {
 
-    const int n = 2;
+    const int n = 1;
     biblioteka ksiazki[n];
     for (int i =0 ;i<n;i++)
     {
@@ -37,8 +37,8 @@ for( int i =0;i<n;i++)
 {
 	if(ksiazki[i].liczbawypozyczen==0)
 	{
-		cout<<ksiazki[i].iduzytkownika<<", ";
-		cout<<ksiazki[i].idwypozyczonejksiazki<<", ";	
+	
+		cout<<ksiazki[i].idwypozyczonejksiazki<<endl;	
 	}
 }
 
