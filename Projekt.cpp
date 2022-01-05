@@ -14,6 +14,13 @@ struct User
         borrowedBooks[numberOfBooks] = bookID;
         numberOfBooks++;
     }
+    
+    void backBook(int bookID)
+    {
+    	borrowedBooks[numberOfBooks] = bookID;
+        borrowBook--;
+    
+	}
 };
 struct Book
 {
@@ -22,8 +29,12 @@ int main()
 {
     User michalek;
     michalek.userID = 1;
-
     michalek.borrowBook(3);
     cout << michalek.borrowedBooks[0] << endl;
+    michalek.backBook(3);
+    cout<<michalek.borrowedBooks[0]<<endl;
+
+    
+    
     return 0;
 }
