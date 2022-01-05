@@ -5,51 +5,25 @@ using namespace std;
 
 struct User
 {
- string userID;
-   string borrowBook;
-    int liczbawypozyczen;
-    string bookID;
-    string title;
-    
-    void ksiazka()
-    {
-    	cout<<"Podaj id ksiazki"<<endl;
-    	if(BookID)
-	}
-    
-    
-};
-    
-int main ()
-{
+    int borrowedBooks[10];
+    int userID;
+    int numberOfBooks = 0;
 
-    const int n = 1;
-    User ksiazki[n];
-    for (int i =0 ;i<n;i++)
+    void borrowBook(int bookID)
     {
-cout<< "podaj id uzytkownika: ";
-getline(cin,ksiazki[i].userID) ;
-cout<< "podaj id wypozyczonej ksiazki: ";
-getline(cin,ksiazki[i].borrowBook);
-cout<<"podaj liczbe wypozyczne: ";
-cin>> ksiazki[i].liczbawypozyczen;
-cin.ignore();
+        borrowedBooks[numberOfBooks] = bookID;
+        numberOfBooks++;
     }
-for (int i=0 ; i<n;i++)
+};
+struct Book
 {
-    cout<<ksiazki[i].userID<<"wypozyczyl ";
-    cout<< "\"" << ksiazki[i].borrowBook<< "\""<<", ";
-    cout<< "liczba wypozyczen: "<<ksiazki[i].liczbawypozyczen<<endl;
-}
-cout<<"ksiazki które nie byly wypo¿yczone"<<endl;
-for( int i =0;i<n;i++)
+};
+int main()
 {
-	if(ksiazki[i].liczbawypozyczen==0)
-	{
-	
-		cout<<ksiazki[i].borrowBook<<endl;	
-	}
-}
+    User michalek;
+    michalek.userID = 1;
 
-return 0;
+    michalek.borrowBook(3);
+    cout << michalek.borrowedBooks[0] << endl;
+    return 0;
 }
