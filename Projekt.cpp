@@ -17,8 +17,8 @@ struct User
     
     void backBook(int bookID)
     {
-    	borrowedBooks[numberOfBooks] = bookID;
-        borrowBook--;
+    	borrowedBooks[numberOfBooks] =0; 
+		numberOfBooks--;
     
 	}
 };
