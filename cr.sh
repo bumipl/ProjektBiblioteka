@@ -1,0 +1,1 @@
+g++ Projekt.cpp -o projekt ; ./projekt
