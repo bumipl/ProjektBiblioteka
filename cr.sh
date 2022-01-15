@@ -1,1 +1,1 @@
-g++ Projekt.cpp -o projekt ; ./projekt
+g++ Projekt.cpp User.cpp -o projekt ; ./projekt
