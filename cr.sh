@@ -1,1 +1,1 @@
-g++ Projekt.cpp User.cpp UserRepository.cpp -o projekt ; ./projekt
+g++ Projekt.cpp User.cpp UserRepository.cpp BookRepository.cpp -o  projekt ; ./projekt
