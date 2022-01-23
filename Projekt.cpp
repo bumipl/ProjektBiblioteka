@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
-#include "User.h"
+#include <User.h>
+#include <UserRepository.h>
+
 
 using namespace std;
 
@@ -18,8 +20,13 @@ int main()
     michalek.borrowBook(2);
     cout << michalek.borrowedBooks[1] << endl;
 
+    michalek.borrowBook(5);
+    cout<< michalek.borrowedBooks[2]<<endl;
+
     michalek.backBook(3);
-    cout << michalek.borrowedBooks[0] << endl;
+    michalek.backBook(5);
+    cout<< michalek.borrowedBooks[0]<<endl;
+
 
     return 0;
 }
