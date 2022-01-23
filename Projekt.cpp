@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include "User.h"
 #include "UserRepository.h"
 
 
@@ -14,16 +13,23 @@ int main()
     
     UserRepository x;
     cout << x.usersList.size() << endl;
-    User y;
+    User y,z,v;
     y.userID = 55;
+    z.userID = 67;
+    v.userID =90;
     x.save(y);  
+    x.save(z);
+    x.save(v);
     cout << x.usersList.size() << endl;
     
     cout << x.find(55).userID << endl;
+cout<<x.find(90).userID<<endl;
 
-    x.remove(55);
-    cout << x.usersList.size() << endl;
     
+    x.remove(67);
+    cout << x.usersList.size() << endl;
+    cout<<x.find(67).userID<<endl;
+
     // User michalek;
     // michalek.userID = 1;
     // michalek.borrowBook(3);
