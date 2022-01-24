@@ -10,6 +10,8 @@ struct User
     vector<int> borrowedBooks; // pewnie bedzie mial vector<User>
     int userID;
 
+    string name;
+
     /**
      * wypozycza ksiazke
     */

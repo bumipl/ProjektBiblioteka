@@ -8,26 +8,33 @@ using namespace std;
 
 int main()
 {
-  vector<Book> books;
-  Book g, h, j;
-  g.title = "Kot w butach";
-  h.title = "pies w butah";
-  j.title = "kaczka w butah";
-  g.bookID = 1;
-  h.bookID = 2;
-  j.bookID = 3;
-  g.author = "ttt";
-  h.author = "hhh";
-  j.author = "jjj";
-  books.push_back(g);
-  books.push_back(h);
-  books.push_back(j);
-  vector<string> text = fromBookToString(books);
+vector<Book>books;
+Book g;
 
-  for (int i = 0; i < text.size(); i++)
-  {
-    cout << text[i] << endl;
-  }
+
+
+
+
+  // vector<Book> books;
+  // Book g, h, j;
+  // g.title = "Kot w butach";
+  // h.title = "pies w butah";
+  // j.title = "kaczka w butah";
+  // g.bookID = 1;
+  // h.bookID = 2;
+  // j.bookID = 3;
+  // g.author = "ttt";
+  // h.author = "hhh";
+  // j.author = "jjj";
+  // books.push_back(g);
+  // books.push_back(h);
+  // books.push_back(j);
+  // vector<string> text = fromBookToString(books);
+
+  // for (int i = 0; i < text.size(); i++)
+  // {
+  //   cout << text[i] << endl;
+  // }
 
   //  BookRepository b;
   //cout << b.booklist.size() << endl;
