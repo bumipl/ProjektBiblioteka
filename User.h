@@ -4,6 +4,7 @@
 // MOŻESZ POZNIEJ JEJ UŻYĆ
 using namespace std;
 
+#pragma once
 struct User
 {
     vector<int> borrowedBooks; // pewnie bedzie mial vector<User>

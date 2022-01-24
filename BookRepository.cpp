@@ -16,7 +16,7 @@ Book BookRepository::find(string title)
     }
 
     Book o;
-    o.bookID = -1;
+    o.bookID =1;
     return o;
 }
 

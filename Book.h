@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#pragma once
+
 struct Book
 {
     int bookID;
