@@ -5,15 +5,15 @@ vector<Book> mapToBook(vector<string> bookAsString)
 {
     vector<Book> books;
 
-for(int i=0;i<bookAsString.size();i++)
-{
-  vector<string> splittedString = split(bookAsString[i]);
-Book b;
-b.bookID= atoi(splittedString[0].c_str()); // atoi - zmiana tablicy charow na inta , c_Str zamienia stringa na tablice czarow
-b.title= splittedString[1];
-b.author=splittedString[2];
-  books.push_back(b);
-}
+    for (int i = 0; i < bookAsString.size(); i++)
+    {
+        vector<string> splittedString = split(bookAsString[i]);
+        Book b;
+        b.bookID = atoi(splittedString[0].c_str()); // atoi - zmiana tablicy charow na inta , c_Str zamienia stringa na tablice czarow
+        b.title = splittedString[1];
+        b.author = splittedString[2];
+        books.push_back(b);
+    }
     return books;
 }
 
@@ -29,7 +29,6 @@ vector<string> fromBookToString(vector<Book> books)
         strings.push_back(bookAsString);
     }
     return strings;
-
 }
 
 vector<string> split(string text)
