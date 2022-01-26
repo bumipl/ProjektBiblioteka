@@ -31,6 +31,43 @@ vector<string> fromBookToString(vector<Book> books)
     return strings;
 }
 
+vector<User> mapToUser(vector<string> userAsString)
+{
+    vector<User> users;
+
+    for (int i = 0; i < userAsString.size(); i++)
+    {
+        vector<string> splittedString = split(userAsString[i]);
+        User u;
+        u.userID = atoi(splittedString[0].c_str()); // atoi - zmiana tablicy charow na inta , c_Str zamienia stringa na tablice czarow
+        u.name = splittedString[1];
+        for (int j = 2; j < splittedString.size(); j++)
+        {
+            u.borrowedBooks.push_back(atoi(splittedString[j].c_str()));
+        }
+
+        users.push_back(u);
+    }
+    return users;
+}
+
+vector<string> fromUserToString(vector<User> users)
+{
+    vector<string> strings;
+    for (int i = 0; i < users.size(); i++)
+    {
+        string userAsString = "";
+        userAsString = userAsString + to_string(users[i].userID);
+        userAsString = userAsString + "," + users[i].name;
+        for (int j = 0; j < users[i].borrowedBooks.size(); j++)
+        {
+            userAsString = userAsString + "," + to_string(users[i].borrowedBooks[j]);
+        }
+        strings.push_back(userAsString);
+    }
+    return strings;
+}
+
 vector<string> split(string text)
 {
     stringstream ss(text);

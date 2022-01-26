@@ -3,18 +3,35 @@
 #include "UserRepository.h"
 #include "BookRepository.h"
 #include "MappingService.h"
+#include "FileSource.h"
 
 using namespace std;
 
 int main()
 {
-vector<Book>books;
-Book g;
 
+  // FileSource test;
 
+  // test.fileName = "users.txt";
 
-
-
+  // vector<User> users;
+  // User u;
+  // users = mapToUser(test.readAllLines());
+  // u.userID = 4;
+  // u.name = "tomek Gwozdz";
+  // u.borrowBook(4);
+  // u.borrowBook(3);
+  // users.push_back(u);
+  // for (int i = 0; i < users.size(); i++)
+  // {
+  //   cout << users[i].userID << " ";
+  //   cout << users[i].name << endl;
+  //   for (int j = 0; j < users[i].borrowedBooks.size(); j++)
+  //   {
+  //     cout << users[i].borrowedBooks[j] << endl;
+  //   }
+  // }
+  // test.saveAllLines(fromUserToString(users));
   // vector<Book> books;
   // Book g, h, j;
   // g.title = "Kot w butach";
