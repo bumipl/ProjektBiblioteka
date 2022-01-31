@@ -14,5 +14,5 @@ struct UserRepository
 
     void remove(int userId); //usuwa uzytkownika o danym id
 
-    void EditUser(int UserID,string name);
+    void editUser(int UserID,string name);
 };

@@ -33,7 +33,7 @@ void UserRepository::remove(int userId)
         }
     }
 }
-void UserRepository::EditUser(int userID,string name)
+void UserRepository::editUser(int userID,string name)
 {
     for (int i = 0; i<usersList.size(); i++)
     {
