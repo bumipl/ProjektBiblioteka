@@ -8,23 +8,11 @@ struct UserRepository
     // konstruktor - wywołuje się podczas tworzenia obiektu
     UserRepository();
 
-    /**
-     *  Definicja metod czyli co zwracają i jakie argumenty przyjmują
-     *  Natomiast jak działają jest opisane w pliku UserRepository.cpp
-     */
+    void save(User user); // zapisuje uzytkownika o danym id
 
-    /**
-     * zapisuje uytkownika
-    */
-    void save(User user);
+    User find(int userId); // wyszukuje uzytkownika o danym id
 
-    /**
-     * wyszukuje uzytkownika po id
-    */
-    User find(int userId);
+    void remove(int userId); //usuwa uzytkownika o danym id
 
-    /**
-     * usuwa uzytkownika o danym id
-    */
-    void remove(int userId);
+    void EditUser(int UserID,string name);
 };

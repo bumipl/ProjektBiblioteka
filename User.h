@@ -4,21 +4,18 @@
 // MOŻESZ POZNIEJ JEJ UŻYĆ
 using namespace std;
 
-#pragma once
+#pragma once // pozwala na wielokrotne uzywanie strutkury w wielu pilkach
+
 struct User
 {
-    vector<int> borrowedBooks; // pewnie bedzie mial vector<User>
+    vector<int> borrowedBooks; 
+
     int userID;
 
     string name;
+  
+    void borrowBook(int bookID); // wypozycza
 
-    /**
-     * wypozycza ksiazke
-    */
-    void borrowBook(int bookID);
-
-    /**
-     * oddaje ksiazke
-    */
-    void backBook(int bookID);
+    
+    void backBook(int bookID); //oddaje ksiazke
 };

@@ -12,4 +12,6 @@ struct BookRepository
     Book find(string title);
 
     void remove(string title);
+
+    void editBook(int BookId, string title, string author);
 };

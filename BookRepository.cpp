@@ -31,3 +31,21 @@ void BookRepository::remove(string title)
         }
     }
 }
+void BookRepository::editBook(int bookID, string title, string author)
+{
+    for (int i = 0; i<booklist.size(); i++)
+    {
+        if (booklist[i].bookID == bookID)
+        {
+            if (author != "")
+            {
+                booklist[i].author = author;
+            }
+            if (title != "")
+            {
+                booklist[i].title = title;
+            }
+            return;
+        }
+    }
+}

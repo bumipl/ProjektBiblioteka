@@ -33,3 +33,17 @@ void UserRepository::remove(int userId)
         }
     }
 }
+void UserRepository::EditUser(int userID,string name)
+{
+    for (int i = 0; i<usersList.size(); i++)
+    {
+        if (usersList[i].userID == userID)
+        {
+            if (name!= "")
+            {
+                usersList[i].name = name;
+            }
+            return;
+        }
+    }
+}
