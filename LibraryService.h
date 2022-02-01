@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <iostream>
 #include "BookRepository.h"
 #include "UserRepository.h"
 #include "FileSource.h"
@@ -7,6 +8,7 @@
 
 using namespace std;
 
+#pragma once
 struct LibraryService
 {
   BookRepository bookRepository;

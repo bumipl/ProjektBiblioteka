@@ -12,6 +12,8 @@ const string QUIT = "5";
 
 void LibraryMenu::openLibrary()
 {
+    // laduje dane z plikow na poczatku programu...
+    service.load();
     while (option != QUIT)
     {
         cout << START_COMUNICATE << endl;
@@ -35,6 +37,7 @@ void LibraryMenu::openLibrary()
             break;
         }
     }
+    service.save(); // zapisuje wszystkie zmiany po zakonczeniu programu
 }
 
 void LibraryMenu::findPanel()
@@ -44,7 +47,8 @@ void LibraryMenu::findPanel()
     switch (atoi(option.c_str()))
     {
     case 1:
-        cout << "1. NOT IMPLEMENTED YET" << endl;
+        // cout << "1. NOT IMPLEMENTED YET" << endl;
+        service.showAllBooks();
         break;
     case 2:
         cout << "2. NOT IMPLEMENTED YET" << endl;

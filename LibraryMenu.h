@@ -1,12 +1,13 @@
 #include <string>
-#include <iostream>
+#include "LibraryService.h"
 
 using namespace std;
 
-// TODO przekazać LibraryService
+
 struct LibraryMenu
 {
     string option;
+    LibraryService service;
     void openLibrary();
     void findPanel();
     void addPanel();

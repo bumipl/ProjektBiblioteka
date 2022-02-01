@@ -1,5 +1,4 @@
 #include "LibraryService.h"
-#pragma once
 
 void LibraryService::load()
 {
@@ -16,7 +15,7 @@ void LibraryService::save()
     vector<string> lines = fromUserToString(userRepositroy.usersList);
     fileSource.fileName = "users.txt";
     fileSource.saveAllLines(lines);
-    vector<string> lines = fromBookToString(bookRepository.booklist);
+    lines = fromBookToString(bookRepository.booklist);
     fileSource.fileName = "books.txt";
     fileSource.saveAllLines(lines);
 }
@@ -34,7 +33,7 @@ void LibraryService::showAllBooks()
 void LibraryService::showUserBooks(int userId)
 {
     vector<int> userBorrowedBooks = userRepositroy.find(userId).borrowedBooks;
-    cout << userRepositroy.find(userId) << endl;
+    cout << userRepositroy.find(userId).name << endl;
     for (int i = 0; i < userBorrowedBooks.size(); i++)
     {
         Book book = bookRepository.find(userBorrowedBooks[i]);
