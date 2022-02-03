@@ -1,7 +1,7 @@
 #include "LibraryMenu.h"
 
 // Komunikaty
-const string START_COMUNICATE = "SYSTEM OBSLUGI BIBLIOTEKI WITA...\n1->PANEL WYSZUKAJ/WYSWIETL\n2->PANEL DODAJ\n3->PANEL EDYTUJ\n4->PANEL USUN\n5->WYJDZ";
+const string START_COMUNICATE = "\n1->PANEL WYSZUKAJ/WYSWIETL\n2->PANEL DODAJ\n3->PANEL EDYTUJ\n4->PANEL USUN\n5->WYJDZ";
 const string FIND_COMUNICATE = "WYSZUKAJ/WYSWIETL\n1->WYSWIETL WSZYSTKIE KSIAZKI\n2->WYSZUKAJ KSIAZKE\n3->WYSZUKAJ UZYTKOWNIKA";
 const string ADD_COMUNICATE = "DODAJ\n1->DODAJ UZYTKOWNIKA\n2->DODAJ KSIAZKE";
 const string EDIT_COMUNICATE = "DODAJ\n1->EDYTUJ UZYTKOWNIKA\n2->EDYTUJ KSIAZKE";
@@ -14,6 +14,7 @@ void LibraryMenu::openLibrary()
 {
     // laduje dane z plikow na poczatku programu...
     service.load();
+    cout << "System Obslugi biblioteki wita" << endl;
     while (option != QUIT)
     {
         cout << START_COMUNICATE << endl;
@@ -47,16 +48,31 @@ void LibraryMenu::findPanel()
     switch (atoi(option.c_str()))
     {
     case 1:
-        // cout << "1. NOT IMPLEMENTED YET" << endl;
         service.showAllBooks();
         break;
     case 2:
-        cout << "2. NOT IMPLEMENTED YET" << endl;
+        findBook();
         break;
     case 3:
-        cout << "3. NOT IMPLEMENTED YET" << endl;
+        findUser();
         break;
     }
+}
+void LibraryMenu::findUser()
+{
+    string userIds;
+    cout << "Wprowadz ID wyszukiwanego Uzytkownika" << endl;
+    getline(cin, userIds);
+    int userId = atoi(userIds.c_str());
+    service.showUserBooks(userId);
+}
+void LibraryMenu::findBook()
+{
+    string bookIds;
+    cout << "Wprowadz ID wyszukiwanej ksiazki" << endl;
+    getline(cin, bookIds);
+    int bookId = atoi(bookIds.c_str());
+    service.showBook(bookId);
 }
 
 void LibraryMenu::addPanel()
@@ -66,12 +82,30 @@ void LibraryMenu::addPanel()
     switch (atoi(option.c_str()))
     {
     case 1:
-        cout << "1. NOT IMPLEMENTED YET" << endl;
+        addUser();
         break;
     case 2:
-        cout << "2. NOT IMPLEMENTED YET" << endl;
+        addBook();
         break;
     }
+}
+void LibraryMenu::addUser()
+{
+    cout << "Wprowadz Imie i naziwsko nowego uzytkownika" << endl;
+    User user;
+    getline(cin, user.name);
+    user.userID = service.getNewUserId();
+    service.saveUser(user);
+}
+void LibraryMenu::addBook()
+{
+    cout << "Wprowadz Tytul ksiazki" << endl;
+    Book book;
+    getline(cin, book.title);
+    cout << "Wprowadz Autora ksiazki" << endl;
+    getline(cin, book.author);
+    book.bookID = service.getNewBookId();
+    service.saveBook(book);
 }
 
 void LibraryMenu::editPanel()
@@ -81,12 +115,37 @@ void LibraryMenu::editPanel()
     switch (atoi(option.c_str()))
     {
     case 1:
-        cout << "1. NOT IMPLEMENTED YET" << endl;
+        editUser();
         break;
     case 2:
-        cout << "2. NOT IMPLEMENTED YET" << endl;
+        editBook();
         break;
     }
+}
+void LibraryMenu::editUser()
+{
+    string userIds;
+    string userName;
+    cout << "Wprowadz ID edytowanego Uzytkownika" << endl;
+    getline(cin, userIds);
+    int userId = atoi(userIds.c_str());
+    cout << "Podaj Imie i naziwsko edytowanego Uzytkownika" << endl;
+    getline(cin, userName);
+    service.editUser(userId, userName);
+}
+void LibraryMenu::editBook()
+{
+    string bookIds;
+    string bookTitle;
+    string bookAuthor;
+    cout << "Wprowadz Id edytowanej ksiazki" << endl;
+    getline(cin, bookIds);
+    int bookId = atoi(bookIds.c_str());
+    cout << "Wprowadz tytul edytowanej ksiazki" << endl;
+    getline(cin, bookTitle);
+    cout << "Wprowadz autora edytowanej ksiazki" << endl;
+    getline(cin, bookAuthor);
+    service.editBook(bookId, bookTitle, bookAuthor);
 }
 void LibraryMenu::removePanel()
 {
@@ -95,10 +154,25 @@ void LibraryMenu::removePanel()
     switch (atoi(option.c_str()))
     {
     case 1:
-        cout << "1. NOT IMPLEMENTED YET" << endl;
+        removeUser();
         break;
     case 2:
-        cout << "2. NOT IMPLEMENTED YET" << endl;
+        removeBook();
         break;
     }
+}
+void LibraryMenu::removeUser()
+{
+    string userIds;
+    cout << "Wprowadz ID wyszukiwanego Uzytkownika" << endl;
+    getline(cin, userIds);
+    int userId = atoi(userIds.c_str());
+    service.removeUser(userId);
+}
+void LibraryMenu::removeBook()
+{
+    string bookTitle;
+    cout << "Podaj tytul usuwanej ksiazki" << endl;
+    getline(cin, bookTitle);
+    service.removeBook(bookTitle);
 }

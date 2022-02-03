@@ -67,3 +67,19 @@ void LibraryService::editUser(int userID, string name)
 {
     userRepositroy.editUser(userID, name);
 }
+void LibraryService::showBook(int bookId)
+{
+    Book book;
+    book = bookRepository.find(bookId);
+    cout << book.bookID << " " << book.title << " " << book.author << endl;
+}
+
+int LibraryService::getNewUserId()
+{
+    return userRepositroy.usersList.size() + 1;
+}
+
+int LibraryService::getNewBookId()
+{
+    return bookRepository.booklist.size() + 1;
+}
