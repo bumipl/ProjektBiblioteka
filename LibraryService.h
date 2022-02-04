@@ -25,7 +25,9 @@ struct LibraryService
   void removeUser(int userId);
   void saveUser(User user);
   void editUser(int userID, string name);
-  void showBook (int bookId);
+  void showBook(int bookId);
+  void borrowBookByUser(int userId, int bookId);
+  void backBookByUser(int userId, int bookId);
   int getNewBookId();
   int getNewUserId();
 };

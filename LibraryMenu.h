@@ -13,6 +13,7 @@ struct LibraryMenu
     void addPanel();
     void editPanel();
     void removePanel();
+    void libraryPanel();
 
     void findBook();
     void findUser();
@@ -22,11 +23,6 @@ struct LibraryMenu
     void editBook();
     void removeUser();
     void removeBook();
-
-
-
-
-
 
     void borrowBookbyUser();
     void backBookbyUser();

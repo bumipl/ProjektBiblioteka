@@ -1,14 +1,14 @@
 #include "LibraryMenu.h"
 
 // Komunikaty
-const string START_COMUNICATE = "\n1->PANEL WYSZUKAJ/WYSWIETL\n2->PANEL DODAJ\n3->PANEL EDYTUJ\n4->PANEL USUN\n5->WYJDZ";
+const string START_COMUNICATE = "\n1->PANEL WYSZUKAJ/WYSWIETL\n2->PANEL DODAJ\n3->PANEL EDYTUJ\n4->PANEL USUN\n5->PANEL WYPOZYCZ\n6->WYJDZ";
 const string FIND_COMUNICATE = "WYSZUKAJ/WYSWIETL\n1->WYSWIETL WSZYSTKIE KSIAZKI\n2->WYSZUKAJ KSIAZKE\n3->WYSZUKAJ UZYTKOWNIKA";
 const string ADD_COMUNICATE = "DODAJ\n1->DODAJ UZYTKOWNIKA\n2->DODAJ KSIAZKE";
 const string EDIT_COMUNICATE = "DODAJ\n1->EDYTUJ UZYTKOWNIKA\n2->EDYTUJ KSIAZKE";
 const string REMOVE_COMUNICATE = "DODAJ\n1->USUN UZYTKOWNIKA\n2->USUN KSIAZKE";
-
+const string BORROW_COMUNICATE = "WYPOZYCZ\n1->WYPOZYCZ KSIAZKE\n2->ODDAJ KSIAZKE";
 // FLAGI
-const string QUIT = "5";
+const string QUIT = "6";
 
 void LibraryMenu::openLibrary()
 {
@@ -34,6 +34,9 @@ void LibraryMenu::openLibrary()
             removePanel();
             break;
         case 5:
+            libraryPanel();
+            break;
+        case 6:
             exit(0);
             break;
         }
@@ -55,6 +58,21 @@ void LibraryMenu::findPanel()
         break;
     case 3:
         findUser();
+        break;
+    }
+}
+void LibraryMenu::libraryPanel()
+{
+    cout << BORROW_COMUNICATE << endl;
+    getline(cin, option);
+    switch (atoi(option.c_str()))
+    {
+    case 1:
+        borrowBookbyUser();
+        break;
+
+    case 2:
+
         break;
     }
 }
@@ -91,7 +109,7 @@ void LibraryMenu::addPanel()
 }
 void LibraryMenu::addUser()
 {
-    cout << "Wprowadz Imie i naziwsko nowego uzytkownika" << endl;
+    cout << "Wprowadz imie i nazwisko nowego uzytkownika" << endl;
     User user;
     getline(cin, user.name);
     user.userID = service.getNewUserId();
@@ -175,4 +193,16 @@ void LibraryMenu::removeBook()
     cout << "Podaj tytul usuwanej ksiazki" << endl;
     getline(cin, bookTitle);
     service.removeBook(bookTitle);
+}
+void LibraryMenu::borrowBookbyUser()
+{
+    string userIds, bookIds;
+
+    cout << "Wprowadz Id uzytkownika ktoremu chcesz wypozyczyc ksiakze" << endl;
+    getline(cin, userIds);
+    int userId = atoi(userIds.c_str());
+    cout << "Wprowadz Id wypozyczanej ksiazki" << endl;
+    getline(cin, bookIds);
+    int bookId = atoi(bookIds.c_str());
+    service.borrowBookByUser(userId, bookId);
 }

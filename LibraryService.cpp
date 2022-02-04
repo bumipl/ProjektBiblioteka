@@ -83,3 +83,7 @@ int LibraryService::getNewBookId()
 {
     return bookRepository.booklist.size() + 1;
 }
+void LibraryService::borrowBookByUser(int userId, int bookId)
+{
+    userRepositroy.find(userId).borrowBook(bookId);
+}

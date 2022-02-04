@@ -8,14 +8,14 @@ using namespace std;
 
 struct User
 {
-    vector<int> borrowedBooks; 
 
     int userID;
 
     string name;
-  
+
+    vector<int> borrowedBooks;
+
     void borrowBook(int bookID); // wypozycza
 
-    
     void backBook(int bookID); //oddaje ksiazke
 };
