@@ -8,18 +8,16 @@ void UserRepository::save(User user)
     usersList.push_back(user);
 }
 
-User UserRepository::find(int userId)
+User *UserRepository::find(int userId)
 {
     for (int i = 0; i < usersList.size(); i++)
     {
         if (usersList[i].userID == userId)
         {
-            return usersList[i];
+            return &usersList[i];
         }
     }
-    User u;
-    u.userID = -1;
-    return u;
+    return nullptr;
 }
 
 void UserRepository::remove(int userId)

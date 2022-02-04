@@ -37,7 +37,7 @@ void LibraryMenu::openLibrary()
             libraryPanel();
             break;
         case 6:
-            exit(0);
+            option = QUIT;
             break;
         }
     }
@@ -72,7 +72,7 @@ void LibraryMenu::libraryPanel()
         break;
 
     case 2:
-
+        backBookbyUser();
         break;
     }
 }
@@ -205,4 +205,16 @@ void LibraryMenu::borrowBookbyUser()
     getline(cin, bookIds);
     int bookId = atoi(bookIds.c_str());
     service.borrowBookByUser(userId, bookId);
+}
+void LibraryMenu::backBookbyUser()
+{
+    string userIds, bookIds;
+
+    cout << "Wprowadz Id uzytkownika ktoremu chcesz zwrocic ksiakze" << endl;
+    getline(cin, userIds);
+    int userId = atoi(userIds.c_str());
+    cout << "Wprowadz Id wypozyczanej ksiazki" << endl;
+    getline(cin, bookIds);
+    int bookId = atoi(bookIds.c_str());
+    service.backBookByUser(userId, bookId);
 }

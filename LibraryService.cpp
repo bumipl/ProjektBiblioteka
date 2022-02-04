@@ -32,8 +32,8 @@ void LibraryService::showAllBooks()
 
 void LibraryService::showUserBooks(int userId)
 {
-    vector<int> userBorrowedBooks = userRepositroy.find(userId).borrowedBooks;
-    cout << userRepositroy.find(userId).name << endl;
+    vector<int> userBorrowedBooks = userRepositroy.find(userId)->borrowedBooks;
+    cout << userRepositroy.find(userId)->name << endl;
     for (int i = 0; i < userBorrowedBooks.size(); i++)
     {
         Book book = bookRepository.find(userBorrowedBooks[i]);
@@ -85,5 +85,9 @@ int LibraryService::getNewBookId()
 }
 void LibraryService::borrowBookByUser(int userId, int bookId)
 {
-    userRepositroy.find(userId).borrowBook(bookId);
+    userRepositroy.find(userId)->borrowBook(bookId);
+}
+void LibraryService::backBookByUser(int userId,int bookId)
+{
+    userRepositroy.find(userId)->backBook(bookId);
 }

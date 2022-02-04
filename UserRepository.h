@@ -10,7 +10,7 @@ struct UserRepository
 
     void save(User user); // zapisuje uzytkownika o danym id
 
-    User find(int userId); // wyszukuje uzytkownika o danym id
+    User *find(int userId); // wyszukuje uzytkownika o danym id
 
     void remove(int userId); //usuwa uzytkownika o danym id
 
