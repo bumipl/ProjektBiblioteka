@@ -4,15 +4,30 @@
 struct UserRepository
 {
     std::vector<User> usersList;
-
-    // konstruktor - wywołuje się podczas tworzenia obiektu
-    UserRepository();
-
-    void save(User user); // zapisuje uzytkownika o danym id
-
-    User *find(int userId); // wyszukuje uzytkownika o danym id
-
-    void remove(int userId); //usuwa uzytkownika o danym id
-
-    void editUser(int UserID,string name);
+/**
+ * @brief zapisuje uzytkownika do listy uzytkownikow
+ * 
+ * @param user 
+ */
+    void save(User user);  
+/**
+ * @brief wyszukiwuje uzytkownika przy uzyciu ID 
+ * 
+ * @param userId 
+ * @return User* - wskaznik na miejsce danego uzytkownika (w pamieci )
+ */
+    User *find(int userId); 
+/**
+ * @brief usuwa uzytkownika z listy uzytkownika
+ * 
+ * @param userId 
+ */
+    void remove(int userId); 
+/**
+ * @brief mozliwa edycja uzytkownika 
+ * 
+ * @param userID 
+ * @param name 
+ */
+    void editUser(int userID,string name);
 };

@@ -1,7 +1,5 @@
 #include "UserRepository.h" // wczytujemy definicje z pliku nagłowkowego
 
-UserRepository::UserRepository() {}
-
 // tak zapisujemy instrukcje metody save
 void UserRepository::save(User user)
 {

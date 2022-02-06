@@ -13,9 +13,17 @@ struct User
 
     string name;
 
-    vector<int> borrowedBooks;
-
-    void borrowBook(int bookID); // wypozycza
-
-    void backBook(int bookID); //oddaje ksiazke
+    vector<int> borrowedBooks; // lista identyfikatorow ksiazek
+                               /**
+ * @brief wypozycza ksiazke po Id
+ * 
+ * @param bookID 
+ */
+    void borrowBook(int bookID);
+    /**
+ * @brief oddaje ksiazke po ID
+ * 
+ * @param bookID 
+ */
+    void backBook(int bookID);
 };
