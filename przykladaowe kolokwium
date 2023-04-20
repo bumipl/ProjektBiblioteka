@@ -1,0 +1,181 @@
+#include <iostream>
+#include "testy.h"
+using namespace std;
+
+int main() {
+	niewystepuje();
+	dokladnieraz();
+	wiecejnizraz();
+	drugafunkcjatest();
+}
+
+
+
+
+#include <iostream>
+#include "testy.h"
+
+int szukanieElementu(const int rozmiarTablicy, int* tablica, int element) {
+	int wystapienie = 0;
+	int indeks = -1;
+	for (int i = 0; i < rozmiarTablicy; i++) {
+
+
+		if (tablica[i] == element) {
+
+			wystapienie++;
+			indeks = i;
+
+		}
+	}
+	if (wystapienie == 1) {
+
+
+		throw std::invalid_argument("");
+		return indeks;
+
+
+
+
+
+	}
+
+	else if (wystapienie > 1) {
+
+		throw std::invalid_argument("");
+		return indeks;
+
+
+
+	}
+	else {
+
+		throw std::invalid_argument("");
+		return -1;
+
+	}
+}
+
+
+
+
+
+int szukanieElementu(const int rozmiarTablicy, int* tablica, int element, int element2) {
+	int wystapienie = 0;
+	for (int i = rozmiarTablicy - 1; i >= 0; --i) {
+		if (tablica[i] == element) {
+			return i;
+
+		}
+
+		else {
+			
+			throw std::invalid_argument("");
+			return -1;
+		}
+
+	}
+
+}
+void drugafunkcjatest() {
+	const int rozmiarTablicy = 7;
+	int tablica[rozmiarTablicy] = { 9,5,7,8,3,5,5 };
+	int element = 2;
+	int element2 = 5;
+
+
+	try
+	{
+		szukanieElementu(rozmiarTablicy, tablica, element,element2);
+		cerr << "Brak wyjatku - drugafunkcjatest" << endl;
+	}
+	catch (const std::invalid_argument&)
+	{
+		cerr << "OK - drugafunkcjatest" << endl;
+	}
+	catch (...)
+	{
+		cerr << "Zly typ wyjatku - drugafunkcjatest" << endl;
+	}
+}
+
+
+
+void niewystepuje() {
+	const int rozmiarTablicy = 7;
+	int tablica[rozmiarTablicy] = { 9,5,7,8,3,5,5 };
+	int element = 2;
+
+
+	try
+	{
+		szukanieElementu(rozmiarTablicy, tablica, element);
+		cerr << "Brak wyjatku - niewystepuje" << endl;
+	}
+	catch (const std::invalid_argument&)
+	{
+		cerr << "OK - niewystepuje" << endl;
+	}
+	catch (...)
+	{
+		cerr << "Zly typ wyjatku - niewystepuje" << endl;
+	}
+}
+
+void dokladnieraz() {
+	const int rozmiarTablicy = 7;
+	int tablica[rozmiarTablicy] = { 9,5,7,8,3,5,5 };
+	int element = 7;
+
+	try
+	{
+		szukanieElementu(rozmiarTablicy, tablica, element);
+		cerr << "Brak wyjatku - dokladnieraz" << endl;
+	}
+	catch (const std::invalid_argument&)
+	{
+		cerr << "OK - dokladnieraz" << endl;
+	}
+	catch (...)
+	{
+		cerr << "Zly typ wyjatku - dokladnieraz" << endl;
+	}
+}
+
+void wiecejnizraz() {
+	const int rozmiarTablicy = 7;
+	int tablica[rozmiarTablicy] = { 9,5,7,8,3,5,5 };
+	int element = 7;
+
+	try
+	{
+		szukanieElementu(rozmiarTablicy, tablica, element);
+		cerr << "Brak wyjatku - wiecejnizraz" << endl;
+	}
+	catch (const std::invalid_argument&)
+	{
+		cerr << "OK - wiecejnizraz" << endl;
+	}
+	catch (...)
+	{
+		cerr << "Zly typ wyjatku - wiecejnizraz" << endl;
+	}
+}
+
+
+
+
+
+#ifndef main_cpp
+#define main_cpp
+
+using namespace std;
+void niewystepuje();
+void dokladnieraz();
+void wiecejnizraz();
+void drugafunkcjatest();
+
+#endif // main_hpp
+
+
+
