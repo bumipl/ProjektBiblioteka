@@ -166,8 +166,9 @@ void wiecejnizraz() {
 
 
 
-#ifndef main_cpp
-#define main_cpp
+#ifndef TESTY_H
+#define TESTY_H
+
 
 using namespace std;
 void niewystepuje();
