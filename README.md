@@ -6,6 +6,7 @@ Projekt, który wirtualnie odtwarza działanie biblioteki. Po uruchomieniu progr
 1.Otwórz terminal lub wiersz polecenia.
 
 2.Wykonaj polecenie, aby sklonować repozytorium:
+
 git clone https://github.com/Michalek111/ProjektBiblioteka.git
 
 3.Uruchom Visual Studio
