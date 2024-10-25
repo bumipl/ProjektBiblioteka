@@ -1,0 +1,10 @@
+﻿  LibraryMenu.cpp
+  LibraryService.cpp
+C:\Users\micha\OneDrive\Pulpit\PROGRAMOWANIE\ProjektBiblioteka\LibraryService.cpp(81,44): warning C4267: "return": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\micha\OneDrive\Pulpit\PROGRAMOWANIE\ProjektBiblioteka\LibraryService.cpp(86,43): warning C4267: "return": konwersja z "size_t" do "int", możliwa utrata danych
+  MappingService.cpp
+  ProjektBiblioteka.cpp
+  User.cpp
+  UserRepository.cpp
+  Generowanie kodu...
+  ProjektBiblioteka.vcxproj -> C:\Users\micha\OneDrive\Pulpit\PROGRAMOWANIE\ProjektBiblioteka\x64\Debug\ProjektBiblioteka.exe
