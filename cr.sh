@@ -1,1 +1,0 @@
-g++ Main.cpp User.cpp UserRepository.cpp BookRepository.cpp MappingService.cpp FileSource.cpp LibraryService.cpp LibraryMenu.cpp -o  projekt ; ./projekt
