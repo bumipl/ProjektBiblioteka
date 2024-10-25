@@ -1,4 +1,4 @@
- Projekt, który wirtualnie odtwarza działanie biblioteki. Po uruchomieniu programu, użytkownik ma możliwość dodawania książek wraz z ich autorami. Dodatkowo, istnieje opcja tworzenia kont klientów biblioteki. Klienci mogą wypożyczać dostępne książki oraz mają dostęp do historii swoich wypożyczeń. Dzięki temu projektowi można symulować interakcje charakterystyczne dla rzeczywistej biblioteki w wirtualnym środowisku.
+Projekt, który wirtualnie odtwarza działanie biblioteki. Po uruchomieniu programu, użytkownik ma możliwość dodawania książek wraz z ich autorami. Dodatkowo, istnieje opcja tworzenia kont klientów biblioteki. Klienci mogą wypożyczać dostępne książki oraz mają dostęp do historii swoich wypożyczeń. Dzięki temu projektowi można symulować interakcje charakterystyczne dla rzeczywistej biblioteki w wirtualnym środowisku.
 
 
 Aby uruchomić program nalezy:
